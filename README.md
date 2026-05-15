@@ -24,7 +24,7 @@ The goal is to build a Retrieval-Augmented Generation (RAG) system to classify v
 - Train and evaluate deep learning models
 - Compare model performance across languages 
 
-## Technoligies
+## Technologies
 
 - Python
 - PyTorch / TensolFlow
