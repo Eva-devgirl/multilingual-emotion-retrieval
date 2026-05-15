@@ -1,4 +1,4 @@
-# multilingual-emotion-deection
+# multilingual-emotion-detection
 
 
 
