@@ -15,7 +15,7 @@ RAGTag Crew
 
 This project focuses on multilingual emotion detection and sentiment analysis using Natural Language Processing and Machine Learning techniques.
 
-The goal is to build a Retrieval-Augmented Generation (RAG) system to classify various emotions like joy, hapiness, surprise, fear and sadness in written text in multiple languages (German, Russian, Chinese, Greek) and compare the performance of different models and retrievals. 
+The goal is to build a Retrieval-Augmented Generation (RAG) system to classify various emotions like joy, happiness, surprise, fear and sadness in written text in multiple languages (German, Russian, Chinese, Greek) and compare the performance of different models and retrievals. 
 
 ## Methodology
 
@@ -27,11 +27,53 @@ The goal is to build a Retrieval-Augmented Generation (RAG) system to classify v
 ## Technologies
 
 - Python
-- PyTorch / TensolFlow
-- Hugging Face LLMs & Datasets
+- PyTorch / TensorFlow
+- Hugging Face Transformers & Datasets
+- Qwen 3
+- Sentence Transformers
+- Vector Database / FAISS
 - Scikit-learn
 - Pandas / NumPy
->>>>>>> 632072d (Update README)
+
+# Installation
+
+## Prerequisities 
+
+- Python 3.9 or higher
+- Git
+
+## Setup Instructions
+
+1. **Clone the repository:**
+'''bash
+git clone https://lrz.de
+cd multilingual-emotion-detection
+'''
+
+2. **Install dependencies:**
+'''bash
+pip install --upgrade pip
+pip install -r requirements.txt
+
+## System Architecture & RAG Pipeline
+
+The pipeline consists of the following main components:
+
+1. Document Loading & Chunking: Preprocessing multilingual textdata.
+2. Vector Database: Storing text embeddings for fast similarity search.
+3. Retrieval: Fetching relevant examples or context based on user input.
+4. LLM CLassifier: Using Qwen3 to classify the emotion of the input text.
+5. Evaluation: Comparing model predictions across different languages.
+
+## Evaluation & Results
+We will compare the performance of  different multilingual LLMs and Retrieval strategies.
+Evaluation metrics may conclude accuracy, precision, recall and f1-score.
+
+....
+
+
+
+
 
 
 
