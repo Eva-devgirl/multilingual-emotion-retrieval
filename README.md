@@ -29,7 +29,7 @@ The goal is to build a Retrieval-Augmented Generation (RAG) system to classify v
 - Python
 - PyTorch / TensorFlow
 - Hugging Face Transformers & Datasets
-- Qwen 3
+- Qwen3
 - Sentence Transformers
 - Vector Database / FAISS
 - Scikit-learn
@@ -45,21 +45,22 @@ The goal is to build a Retrieval-Augmented Generation (RAG) system to classify v
 ## Setup Instructions
 
 1. **Clone the repository:**
-'''bash
+``bash
 git clone https://lrz.de
 cd multilingual-emotion-detection
-'''
+``
 
 2. **Install dependencies:**
-'''bash
+``bash
 pip install --upgrade pip
 pip install -r requirements.txt
+``
 
 ## System Architecture & RAG Pipeline
 
 The pipeline consists of the following main components:
 
-1. Document Loading & Chunking: Preprocessing multilingual textdata.
+1. Document Loading & Chunking: Preprocessing multilingual text data.
 2. Vector Database: Storing text embeddings for fast similarity search.
 3. Retrieval: Fetching relevant examples or context based on user input.
 4. LLM CLassifier: Using Qwen3 to classify the emotion of the input text.
@@ -67,7 +68,7 @@ The pipeline consists of the following main components:
 
 ## Evaluation & Results
 We will compare the performance of  different multilingual LLMs and Retrieval strategies.
-Evaluation metrics may conclude accuracy, precision, recall and f1-score.
+Evaluation metrics may include accuracy, precision, recall and f1-score.
 
 ....
 
