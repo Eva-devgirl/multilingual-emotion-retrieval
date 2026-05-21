@@ -1,21 +1,24 @@
 import pandas as pd
 from sentence_transformers import SentenceTransformer
+from preprocessing  import load_greek_chunks
 
-#model e5-base load
+# model e5-base load
 model = SentenceTransformer("intfloat/multilingual-e5-base")
 
-#greek dataset load
-df_el = pd.read_csv("data/el-projections.tsv", sep="\t")
+chunks = load_greek_chunks()
 
-df_el.columns = ["text", "labels"]
+# passage is a special format of e5-models
+# sentence = passage = chunk
+passages = ["passage: " + chunk
+	    for chunk in chunks[:100]
+]
 
-#chunking
-#in XED 1 chunk = 1 sentence
-#chunks = sentences
-chunks = df_el["text"].tolist()
+# create embeddings 
+embeddings = model.encode(passages, normalize_embeddings=True)
 
-#create embeddings 
-embedding = model.encode(chunks)
 
-print(len(chunks))
-print(similarities.shape)
+print("Number of chunks: ", len(passages))
+print("Embedding shape for the first 100 chunks:", embeddings.shape)
+print("First 10 Values for the First Embedding:", embeddings[0][:10])
+
+
