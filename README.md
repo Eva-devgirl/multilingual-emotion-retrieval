@@ -19,11 +19,11 @@ The goal is a RAG-Based Approach to Multilingual Emotion Evaluation and to class
 
 ## Methodology
 
-- Preprocessing multilingual text databases (Greek, Russian, German, Chinese) annotated by humans 
-- Implement a retrieval system based on multilingual-e5-base 
-- Explore different emotion classification techniques
-- Train and evaluate deep learning models
-- Compare model performance across languages 
+- Preprocess multilingual datasets (Greek, Russian, German, Chinese)
+- Implement a retrieval-based example selection system using multilingual-e5-base and FAISS
+- Retrieve semantically similar labeled training examples for each input query
+- Use retrieved strategies for Qwen3 emotion classification
+- Compare and evaluate multilingual classification performance across languages 
 
 ## Technologies
 
