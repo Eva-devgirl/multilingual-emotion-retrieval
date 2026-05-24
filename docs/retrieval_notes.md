@@ -32,9 +32,10 @@ So far, we have implented the first retrieval prototype steps:
 1. Loaded the Greek, Russian, German and Chinese XED dataset
 2. Applied basic preprocessing only for the Greek one (to explore how it works)
 3. Used Sentence level chunking
-4. Loaded the e5-multilingual-base 
+4. Loaded the e5-multilingual-base (https://huggingface.co/intfloat/multilingual-e5-base)
 5. Generated embeddings for the first 100 Greek chunks (sentences).  
-6. TO DO : FAISS-based retrieval
+6. FAISS-based retrieval (https://ai.meta.com/tools/faiss/)
+
 
 ## Current limitations
 
