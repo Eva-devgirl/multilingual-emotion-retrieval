@@ -1,6 +1,6 @@
 # multilingual-emotion-detection
 
-## Gruppenname
+## Team 4 - Gruppenname
 
 RAGTag Crew
 
@@ -31,12 +31,11 @@ The goal is to build a Retrieval-Augmented Generation (RAG) system to classify v
 - PyTorch / TensorFlow
 - Scikit-learn
 - Pandas / NumPy
-- Hugging Face Transformers 
-- XED Datasets
-- e5-multilingual-base (Hugging Face)
-- FAISS for retrieval
-- Qwen3
-- Sentence Transformers
+- XED Datasets (https://github.com/Helsinki-NLP/XED)
+- e5-multilingual-base (https://huggingface.co/intfloat/multilingual-e5-base)
+- FAISS for retrieval (https://ai.meta.com/tools/faiss/)
+- Qwen3 (https://huggingface.co/collections/Qwen/qwen3)
+- Sentence Transformers 
 
 # Installation
 
@@ -49,23 +48,23 @@ The goal is to build a Retrieval-Augmented Generation (RAG) system to classify v
 
 1. **Clone the repository:**
 ``bash
-git clone https://lrz.de
+https://gitlab.lrz.de/ir-projects-ss26/team-04/multilingual-emotion-detection
 
-cd multilingual-emotion-detection
 ``
 
 2. **Install dependencies:**
 ``bash
 pip install --upgrade pip
 pip install -r requirements.txt
+pip install sentence-transformers
 ``
 
 ## System Architecture & RAG Pipeline
 
 The pipeline consists of the following main components:
 
-1. Document Loading: Preprocessing multilingual (Greek, German, Russian, Chinese) text data.
-2. Vector Database: Storing text embeddings for fast similarity search.
+1. Datasets Loading 
+2. Preprocessing multilingual (Greek, German, Russian, Chinese) text data.
 3. Retrieval: Chunking, create embeddings, FAISS for indexing
 4. LLM CLassifier: Using Qwen3 to classify the emotion of the input text.
 5. Evaluation: Comparing model predictions across different languages.
