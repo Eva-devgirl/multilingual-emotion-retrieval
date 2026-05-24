@@ -15,7 +15,7 @@ RAGTag Crew
 
 This project focuses on multilingual emotion detection and sentiment analysis using Natural Language Processing and Machine Learning techniques.
 
-The goal is to build a Retrieval-Augmented Generation (RAG) system to classify various emotions like joy, happiness, surprise, fear and sadness in written text in multiple languages (German, Russian, Chinese, Greek) and compare the performance of different models and retrievals. 
+The goal is a RAG-Based Approach to Multilingual Emotion Evaluation and to classify various emotions like joy, happiness, surprise, fear and sadness in written text in multiple languages (German, Russian, Chinese, Greek) and compare the performance of different models and retrievals. 
 
 ## Methodology
 
@@ -69,6 +69,23 @@ The pipeline consists of the following main components:
 4. LLM CLassifier: Using Qwen3 to classify the emotion of the input text.
 5. Evaluation: Comparing model predictions across different languages.
 6. Explainability
+
+## Baselines
+
+1. zero-shot LLM
+  - Qwen3 predicts the emotion label without retrieved examples
+
+2. few-shot LLM
+  - Qwen3 receives randomly selected labeled examples in the prompt
+
+3. fine-tuned Multilingual BERT
+  - a supervised multilingual classifier trained directly on the emotion datasets
+
+4. RAG-based Classification
+  - the model retrieves semantically similar examples using multilingual-e5 emebddings and FAISS before classification
+
+5. RAG + reranker
+  - retrieved examples are additionally reranked before being passed to the LLM
 
 ## Evaluation & Results
 We will compare the performance of  different multilingual LLMs and Retrieval strategies.
