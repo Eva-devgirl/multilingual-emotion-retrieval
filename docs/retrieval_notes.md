@@ -1,9 +1,10 @@
-
 # Retrieval Notes
+
+Goal of the project : It investigates retrieval-based example selection for multilingual emotion classification
 
 ## Dataset
 
-We use the XED annotated dataset
+We use the XED annotated dataset because all languages for our project are inluded..
 
 Languages: Greek, Russian, German, Chinese
 
@@ -13,17 +14,18 @@ In XED 1 chunk = 1 sentence
 
 ## Embeddings
 
-We use multilingual-e5
+We use multilingual-e5-base at the prototype retrieving part because its easy to handle with and we will change to multilingual-e5-large
+
 - multilingual embeddings
 - support all four languages
-- semantic retrieval
 
 ## Retrieval
 
-- FAISS : similarity search between embeddings
+- FAISS : semantic similarity search between embeddings
 
 ## planned pipeline
-Text -> chunk -> Embedding -> FAISS Index -> similarity retrieval
+
+Text -> chunk -> Embeddings -> FAISS Index -> similarity retrieval
 
 ## Current progress
 
@@ -31,15 +33,34 @@ So far, we have implented the first retrieval prototype steps:
 
 1. Loaded the Greek, Russian, German and Chinese XED dataset
 2. Applied basic preprocessing only for the Greek one (to explore how it works)
-3. Used Sentence level chunking
+3. Used sentence level chunking
 4. Loaded the e5-multilingual-base (https://huggingface.co/intfloat/multilingual-e5-base)
-5. Generated embeddings for the first 100 Greek chunks (sentences).  
-6. FAISS-based retrieval (https://ai.meta.com/tools/faiss/)
+5. Generated dense embeddings for the first 100 Greek chunks (sentences).  
+6. FAISS retrieval (https://ai.meta.com/tools/faiss/). FAISS uses mathematical shortcuts, clustering, 
+   and advanced indexing to filter the search space and retrieve nearest neighbors in milliseconds. 
+7. Queries in Greek: query_1 for joy, query_2 for sadness
+8. Scores for the top 5: 
 
 
 ## Current limitations
 
-At this point the system retrieves semantically similar sentences.
+1. At this point the system retrieves semantically similar sentences.
+2. The emotion labels are available in XED dataset, but they are still not integrated into the retrieval pipeline.
+3. The prototype currently uses only 100 examples from the Greek dataset for testing.
+4. Only dense retrieval with FAISS is implemented.
+5. No retrieval evaluation has been done.
 
-The emotion labels are available in XED dataset, but they are still not included.
+
+## To do
+
+1. Same procedure for all languages
+2. Use the labels for emotions joy, sadness, surprise, fear, anger
+3. BM25 retrieval for lexical similarity search
+4. Future evaluation of retrieval quality using ndcg metric. It measures how good a ranking is by considering both the relevance and position.
+
+
+
+
+
+
 
