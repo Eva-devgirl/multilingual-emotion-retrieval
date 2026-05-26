@@ -15,7 +15,7 @@ RAGTag Crew
 
 This project focuses on multilingual emotion detection and sentiment analysis using Natural Language Processing and Machine Learning techniques.
 
-The goal is a RAG-Based Approach to Multilingual Emotion Evaluation and to classify various emotions like joy, happiness, surprise, fear and sadness in written text in multiple languages (German, Russian, Chinese, Greek) and compare the performance of different models and retrievals. 
+The main goal is to investigate whether retrieval-based example selection improves the Multilingual Emotion Evaluation and to classify various emotions like joy, happiness, surprise, fear and sadness in written text in multiple languages (German, Russian, Chinese, Greek). We compare several  multilingual emotion classification baselines, including zero-shot LLMs, few-shot prompting, fine-tuned multilingual BERT, dense retrieval with FAISS, BM25 retrieval, and reranking approaches.
 
 ## Methodology
 
@@ -23,6 +23,10 @@ The goal is a RAG-Based Approach to Multilingual Emotion Evaluation and to class
 - Implement a retrieval-based example selection system using multilingual-e5-base and FAISS
 - Retrieve semantically similar labeled training examples for each input query
 - Use retrieved strategies for Qwen3 emotion classification
+- Zero-shot classification with Qwen3
+- Few-shot prompting with randomly selected examples
+- Fine-tuned multilingual BERT for supervised classification
+- Compare dense retrieval, BM25 retrieval and reranking approaches
 - Compare and evaluate multilingual classification performance across languages 
 
 ## Technologies
