@@ -10,7 +10,12 @@ def load_greek_chunks():
 	chunks = chunks[chunks != ""].tolist()
 
 	return chunks
+
+def main():	
+	chunks = load_greek_chunks()
 	
-chunks = load_greek_chunks()
-print(len(chunks))
-print(chunks[:5])
+	print(len(chunks))
+	print(chunks[:5])
+	
+if __name__ == "__main__":
+	main():
