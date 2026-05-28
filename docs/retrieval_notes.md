@@ -42,22 +42,20 @@ So far, we have implemented the first retrieval prototype:
    and advanced indexing to filter the search space and retrieve nearest neighbors in milliseconds. 
 7. Implemented lexical retrieval using BM25 (it takes tokens/words, not embeddings)  
 8. Queries in Greek: query_1 for joy, query_2 for sadness
-8. Scores for the top 5
-
-
-## Current limitations
-
-1. The emotion labels are available in XED dataset, but they are still not integrated into the retrieval pipelines.
-2. The prototype currently uses only 1000 examples from the Greek dataset for testing.
-3. No retrieval evaluation has been done.
+9. Scores for the top 5
 
 
 ## To do
 
 1. Same procedure for all languages
-2. Use the labels for emotions joy, sadness, surprise, fear, anger
-3. Future evaluation of retrieval quality using ndcg metric. It measures how good a ranking is by considering both the relevance and position.
-
+2. The emotion labels are available in XED dataset, but they are still not integrated into the retrieval pipelines.
+3. The prototype currently uses only 1000 examples from the Greek dataset for testing.
+4. Compare FAISS semantic retrieval with bm25 lexical retrieval
+5. Test cross-lingual semantic retrieval.
+6. Use only the train split for the retrieval index.
+7. No retrieval evaluation has been done.
+8. Future evaluation of retrieval quality using ndcg metric. It measures how good a ranking is by considering both the relevance and position.
+   or label overlap@k
 
 
 
