@@ -1,41 +1,43 @@
-import pandas as pd
-from pathlib import Path
+from datasets import load_dataset
 
 
-def load_data():
-    #separate the languages for easier retrieval
-    df_el = pd.read_csv("data/el-projections.tsv", sep="\t", header = None)
-    df_ru = pd.read_csv("data/ru-projections.tsv", sep="\t", header = None)
-    df_de = pd.read_csv("data/de-projections.tsv", sep="\t", header = None)
-    df_zh = pd.read_csv("data/zh-projections.tsv", sep="\t", header = None)
+def load_brighter(language= "eng"):
 
-    #assign column names
-    df_el.columns = ["text", "labels"]
-    df_ru.columns = ["text", "labels"]
-    df_de.columns = ["text", "labels"]
-    df_zh.columns = ["text", "labels"]
+    dataset = load_dataset("brighter-dataset/BRIGHTER-emotion-categories", language)
 
-    #each sentence is treated as one chunk
-    #chunks = df_el["text"].tolist()
+    train_dataset = dataset["train"]
 
-    return df_el, df_ru, df_de, df_zh
+    texts = train_dataset["text"]
+    labels = train_dataset["emotions"]
+
+    return texts, labels
+
+def load_all():
+    languages = ["eng","deu", "rus", "chn"]
+
+    data = {}
+
+    for lang in languages:
+        texts, labels = load_brighter(lang)
+        data[lang] = {"texts": texts, "labels": labels}
+
+    return data
 
 def main():
-    df_el, df_ru, df_de, df_zh = load_data()
+    data = load_all()
 
-    print(df_el.head())
-    print(df_el.shape)
+    print(data.keys())
+    print(data["eng"]["texts"][:5])
+    print(data["eng"]["labels"][:5])
+    print(data["deu"]["texts"][:5])
+    print(data["deu"]["labels"][:5])
+    print(data["rus"]["texts"][:5])
+    print(data["rus"]["labels"][:5])
+    print(data["chn"]["texts"][:5])
+    print(data["chn"]["labels"][:5])
 
 if __name__ == "__main__":
     main()
 
-#print(df_ru.head())
-#print(df_ru.shape)
-
-#print(df_de.head())
-#print(df_de.shape)
-
-#print(df_zh.head())
-#print(df_zh.shape)
 
 
