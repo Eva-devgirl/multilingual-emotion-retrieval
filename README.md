@@ -37,12 +37,6 @@ The main goal is to investigate whether retrieval-based example selection improv
 - Python 3.9 or higher
 - Git
 
-## Setup Instructions
-
-1. **Clone the repository:**
-``bash
-https://gitlab.lrz.de/ir-projects-ss26/team-04/multilingual-emotion-detection
-
 ``
 
 2. **Install dependencies:**
