@@ -1,16 +1,5 @@
 # multilingual-emotion-detection
 
-## Team 4 - Gruppenname
-
-RAGTag Crew
-
-## Team Members
-
-- Katharina Maier
-- Kristina Terekhova
-- Evanthia Tsigkana
-- Jingyi Wang
-
 ## Overview
 
 This project focuses on multilingual emotion detection and sentiment analysis using Natural Language Processing and Machine Learning techniques.
